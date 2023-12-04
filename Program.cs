@@ -1,2 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿string[] FillArray(int n, string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"Введите элемент массива :\t");
+        array[i] = Console.ReadLine();
+        while (array[i] == string.Empty)
+        {
+            Console.Write($"Вы не ввели элемент массива! ");
+            Console.Write($"ВВЕДИТЕ элемент массива :\t");
+            array[i] = Console.ReadLine();
+        }
+        Console.WriteLine();
+    }
+    return array;
+}
+
+Console.Clear();
+Console.WriteLine("Введите длину массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+string[] array = new string[n];
