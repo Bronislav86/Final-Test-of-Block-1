@@ -15,8 +15,15 @@
     return array;
 }
 
+void PrintArray(string[] array)
+{
+    Console.Write($"[\"{String.Join("\", \"", array)}\"]");
+    Console.WriteLine();
+}
+
 Console.Clear();
 Console.WriteLine("Введите длину массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[n];
 FillArray(array);
+PrintArray(array);
