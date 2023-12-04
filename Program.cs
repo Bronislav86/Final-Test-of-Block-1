@@ -1,4 +1,4 @@
-﻿string[] FillArray(int n, string[] array)
+﻿string[] FillArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -19,3 +19,4 @@ Console.Clear();
 Console.WriteLine("Введите длину массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[n];
+FillArray(array);
