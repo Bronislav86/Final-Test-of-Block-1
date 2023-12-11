@@ -23,13 +23,27 @@ void PrintArray(string[] array)
 
 void PrintShortArray(string[] array, int symbolsPerItem)
 {
+    string[] shortArray = new string[array.Length];
+    int j = 0;
 
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= symbolsPerItem)
+        {
+            shortArray[j++] = array[i];
+        }
+    }
+    Array.Resize(ref shortArray, j);
+
+    Console.Write($"[\"{String.Join("\", \"", shortArray)}\"]");
+    Console.WriteLine();
 }
 
 Console.Clear();
 Console.WriteLine("Введите длину массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[n];
+int symbolsPerItem = 3;
 FillArray(array);
 PrintArray(array);
 PrintShortArray(array, symbolsPerItem);
